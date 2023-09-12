@@ -1,0 +1,20 @@
+plugins {
+	id 'java'
+}
+
+
+group = 'com.mercymodest.study'
+sourceCompatibility = '8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+	maven { url 'https://repo.spring.io/snapshot' }
+}
+
+dependencies {
+	annotationProcessor(project(":spring-boot-project:spring-boot-tools:spring-boot-configuration-processor"))
+	implementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-web"))
+	implementation(enforcedPlatform(project(":spring-boot-project:spring-boot-dependencies")))
+	implementation(project(":spring-boot-project:spring-boot"))
+}
